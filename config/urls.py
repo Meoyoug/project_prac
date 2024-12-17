@@ -17,6 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+
+def welcome(request):
+    return {'message': "welcome"}
+
+
 urlpatterns = [
+    path('', welcome),
     path('admin/', admin.site.urls),
 ]
+
+
