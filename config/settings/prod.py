@@ -13,8 +13,12 @@ ALLOWED_HOSTS = ENV['ALLOWED_HOSTS'].split(', ')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': ENV.get('POSTGRES_HOST', 'localhost'),
+        'NAME': ENV.get('POSTGRES_DBNAME', 'oz_practice'),
+        'USER': ENV.get('POSTGRES_USER', 'postgres'),
+        'PASSWORD': ENV.get('POSTGRES_PASSWORD', 'postgres'),
+        'PORT': ENV.get('POSTGRES_PORT', 5432),
     }
 }
 
