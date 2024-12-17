@@ -9,7 +9,7 @@ ENV = dotenv_values(BASE_DIR / 'envs/.env.prod')
 SECRET_KEY = ENV['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ENV['ALLOWED_HOSTS'].split(', ')
 
@@ -26,4 +26,4 @@ DATABASES = {
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = '/var/static'
