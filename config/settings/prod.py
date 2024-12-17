@@ -1,7 +1,9 @@
+import os
+
 from dotenv import dotenv_values
 from config.settings.base import *
 
-ENV = dotenv_values('../../envs/.env.prod')
+ENV = dotenv_values(BASE_DIR / 'envs/.env.prod')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = ENV['SECRET_KEY']
@@ -24,3 +26,4 @@ DATABASES = {
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, '.staticfiles')
